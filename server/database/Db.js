@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 // MongoDB connection setup
 mongoose.connect('mongodb+srv://namratac:Namrata@cluster0.nte2w9a.mongodb.net/Reminder', {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true
 });
 
 const db = mongoose.connection;
