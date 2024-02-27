@@ -1,19 +1,30 @@
+import React, { useState } from 'react';
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom"; // Import BrowserRouter instead of BrowserRouter as Router
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
 import Signup from "./components/accounts/Register/Signup";
-import Login from "./components/accounts/Login";
-import Home from "./components/Home";
+import Login from "./components/accounts/login/Login";
+import Home from "./components/home/Home";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <div className="App">
-      <BrowserRouter> {/* Use BrowserRouter */}
-        <Navbar />
+      <BrowserRouter> 
+        <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
         </Routes>
       </BrowserRouter>
     </div>

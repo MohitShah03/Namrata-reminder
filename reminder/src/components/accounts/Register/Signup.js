@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./SignUp.css"; 
-import { signup } from "../Auth";
+import axios from 'axios';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +16,8 @@ const Signup = () => {
   });
 
   const [successMessage, setSuccessMessage] = useState("");
+  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +27,7 @@ const Signup = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
     if (formData.password !== formData.confirmPassword) {
@@ -36,16 +39,23 @@ const Signup = () => {
     setFormError({
       confirmPassword: "",
     });
-    signup(formData);
-    setSuccessMessage("Registration successful!");
-
-    setFormData({
-      username: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    });
-  };
+    
+    try {
+      const response = await axios.post('http://localhost:8000/api/signup', formData);
+      if (response.status === 201) {
+        setSuccessMessage("Registration successful!");
+        setFormData({
+          username: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        });
+        navigate('/login');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 
   useEffect(() => {
     if (successMessage) {
