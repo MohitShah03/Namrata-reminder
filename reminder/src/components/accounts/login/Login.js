@@ -29,9 +29,8 @@ const Login = ({ onLogin }) => {
         setError('');
         setEmail('');
         setPassword('');
-        // Call the onLogin function passed from the parent component
         onLogin();
-        navigate('/');
+        navigate('/reminder');
       }
 
     } catch (error) {

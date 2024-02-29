@@ -51,7 +51,7 @@ router.delete("/deleteReminder/:id",async(req,res)=>{
 
 router.get("/getReminder/:id" , async(req,res)=>{
     const getList=await list.find({user: req.params.id});
-    if (getList.length!=0) {
+    if (getList.length!==0) {
         res.status(200).json({getList});
     }
     else{
