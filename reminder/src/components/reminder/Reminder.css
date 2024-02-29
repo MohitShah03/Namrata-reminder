@@ -1,0 +1,15 @@
+.react-time-picker__wrapper.react-time-picker--open {
+    box-shadow: none;
+}
+
+.Reminder-Card{
+    border: 1px solid black;
+}
+
+.reminder-card-p{
+    text-align: justify;
+    text-justify: inter-word;
+}
+.icons{
+    cursor: pointer;
+}

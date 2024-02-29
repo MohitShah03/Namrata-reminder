@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
     type: String, 
     required: true
    },
+   
    reminderList:[
     {
       type: mongoose.Types.ObjectId,

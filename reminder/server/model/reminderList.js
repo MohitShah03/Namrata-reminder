@@ -9,6 +9,14 @@ const listSchema = new mongoose.Schema({
         required:true,
     },
 
+    date:{
+        type: Date,
+    },
+
+    time:{
+        type: String,
+    },
+
     user:[
         {
             type: mongoose.Types.ObjectId,

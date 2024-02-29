@@ -4,9 +4,8 @@ const cors = require('cors');
 const app = express();
 const route = require("../server/route/Route.js");
 const Route = require("../server/route/reminderList.js");
+
 app.use(bodyParser.json());
-
-
 
 require ("./database/Db.js");
 const port = 8000;
