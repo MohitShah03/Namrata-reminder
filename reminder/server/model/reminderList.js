@@ -9,13 +9,15 @@ const listSchema = new mongoose.Schema({
         required:true,
     },
 
-    date:{
+    date: {
         type: Date,
-    },
+        required: true
+      },
 
-    time:{
+      time: {
         type: String,
-    },
+        required: true
+      },    
 
     user:[
         {

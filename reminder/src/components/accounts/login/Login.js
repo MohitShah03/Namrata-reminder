@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
-import axios from 'axios'; // Import axios for making HTTP requests
+import axios from 'axios'; 
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');

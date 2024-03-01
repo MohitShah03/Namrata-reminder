@@ -17,7 +17,13 @@ function App() {
 
   const checkLoginStatus = () => {
     const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token); // Set isLoggedIn based on token existence
+    if (token) {
+    setIsLoggedIn(true); 
+    console.log("User is logged in");
+  } else {
+    setIsLoggedIn(false); 
+    console.log("User is not logged in");
+  } 
   };
 
   const handleLogin = () => {
