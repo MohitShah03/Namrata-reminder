@@ -7,7 +7,7 @@ const ReminderList = ({ title, description, selectedDate, selectedTime, id, onDe
   return (
     <div className="p-3 Reminder-Card">
       <h5>{title}</h5>
-      <h5>{selectedDate.toLocaleDateString("en-GB")}</h5>
+      {/* <h5>{selectedDate.toLocaleDateString("en-GB")}</h5> */}
       <h5>{selectedTime}</h5>
       <p className="reminder-card-p">{description}</p>
       <div className="d-flex justify-content-between">
