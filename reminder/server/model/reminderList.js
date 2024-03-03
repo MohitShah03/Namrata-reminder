@@ -4,19 +4,20 @@ const listSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    body:{
+    description:{
         type:String,
         required:true,
     },
 
     date: {
         type: Date,
-        required: true
+        //required: true
+        default:Date.now
       },
 
       time: {
         type: String,
-        required: true
+        //required: true
       },    
 
     user:[

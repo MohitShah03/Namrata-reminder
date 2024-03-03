@@ -3,9 +3,10 @@
 const mongoose = require('mongoose');
 
 // MongoDB connection setup
-mongoose.connect('mongodb+srv://namratac:Namrata@cluster0.nte2w9a.mongodb.net/Reminder', {
+//'mongodb+srv://namratac:Namrata@cluster0.nte2w9a.mongodb.net/Reminder'
+mongoose.connect('mongodb://127.0.0.1:27017/namrata', {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
